@@ -9,9 +9,9 @@ namespace Forma_2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AutoController : ControllerBase
+    public class MotorController : ControllerBase
     {
-        private Forma2_Services.Repository<Forma2_Data.Models.AutoModel> Autos = new Forma2_Services.Repository<Forma2_Data.Models.AutoModel>();
+        private Forma2_Services.Repository<Forma2_Data.Models.MotorModel> Motos = new Forma2_Services.Repository<Forma2_Data.Models.MotorModel();
 
 
         [HttpGet]
@@ -19,7 +19,7 @@ namespace Forma_2.Controllers
         public IActionResult GetAll()
         {
 
-            return Ok(Autos.GetAll());
+            return Ok(Motos.GetAll());
 
         }
 
@@ -28,16 +28,15 @@ namespace Forma_2.Controllers
         public IActionResult GetID(int id)
         {
 
-            return Ok(Autos.Get(id));
+            return Ok(Motos.Get(id));
         }
 
         [HttpPost]
         [Route("")]
-        public IActionResult Add([FromBody] Forma2_Data.Models.AutoModel item)
+        public IActionResult Add([FromBody] Forma2_Data.Models.MotorModel item)
         {
-            return Ok(Autos.Add(item)); 
+            return Ok(Motos.Add(item));
         }
-
 
         //EDIT, DELETE
     }
